@@ -1,0 +1,419 @@
+<html>
+
+<script>
+function showTable()
+{
+    document.getElementById('invi').style.visibility = 'visible';//shows the table
+    return false; //tells the form not to actaully load the action page
+}
+
+function clearBox(elementID)
+{
+  document.getElementById(elementID).innerHTML = "";
+}
+
+function func(f){
+    clearBox("xtable");
+    
+    var divresults = document.getElementById("xtable");
+    
+    //var rep = document.getElementsByTagName("table")[0];
+    var body = document.getElementsByTagName("body")[0];
+      
+  // creates a <table> element and a <tbody> element
+  var tbl = document.createElement("table");
+  tbl.setAttribute('class', 'tableX');
+
+  var tblBody = document.createElement("tbody");
+
+  // creating all cells
+ 
+
+    // creates a table row
+    var row = document.createElement("tr");
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Loan Date");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Canceled Amount");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Canceled Date");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Outstanding Principal Balance");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Outstanding Principal Balance as of Date");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Outstanding Interest Balance");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+     
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Outstanding Interest Balance as of Date");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Interest Rate Type");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Interest Rate");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+
+      var cellText = document.createTextNode("Repayment Plan Type");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Status Description");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+   
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Status Effective Date");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode("Contact Name");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+
+      
+  tblBody.appendChild(row);
+
+    var row = document.createElement("tr");
+      var cell = document.createElement("td");
+      if(f.LoanDate){
+      var cellText = document.createTextNode(f.LoanDate);
+      }
+      else{
+      var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      if(f.LoanCanceledAmount){
+      var cellText = document.createTextNode(f.LoanCanceledAmount);
+      }
+      else{
+      var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+    
+      var cell = document.createElement("td");
+      if(f.LoanCanceledDate){
+      var cellText = document.createTextNode(f.LoanCanceledDate);
+      }
+      else{
+      var cellText = document.createTextNode("Null");  
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+      
+      var cell = document.createElement("td");
+      if(f.LoanOutstandingPrincipalBalance){
+      var cellText = document.createTextNode(f.LoanOutstandingPrincipalBalance);
+      }
+      else{
+      var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      if(f.LoanOutstandingPrincipalBalanceasofDate){
+      var cellText = document.createTextNode(f.LoanOutstandingPrincipalBalanceasofDate);
+      }
+      else{
+      var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      if(f.LoanOutstandingInterestBalance){
+      var cellText = document.createTextNode(f.LoanOutstandingInterestBalance);
+      }
+      else{
+      var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      if(f.LoanOutstandingInterestBalanceasofDate){
+      var cellText = document.createTextNode(f.LoanOutstandingInterestBalanceasofDate);
+      }
+      else{
+      var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+    
+      var cell = document.createElement("td");
+      if(f.LoanInterestRateType){
+      var cellText = document.createTextNode(f.LoanInterestRateType);
+      }
+      else{
+      var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      if(f.LoanInterestRate){
+      var cellText = document.createTextNode(f.LoanInterestRate);
+      }
+      else{
+      var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      if(f.LoanRepaymentPlanType){
+      var cellText = document.createTextNode(f.LoanRepaymentPlanType);
+      }
+      else{
+      var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+      
+      var cell = document.createElement("td");
+      if(f.LoanStatusDescription){
+      var cellText = document.createTextNode(f.LoanStatusDescription);
+      }
+      else
+      {
+            var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+      
+      var cell = document.createElement("td");
+      if(f.LoanStatusEffectiveDate){
+      var cellText = document.createTextNode(f.LoanStatusEffectiveDate);
+      }
+      else{
+            var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+
+      var cell = document.createElement("td");
+      if(f.LoanContactName){
+      var cellText = document.createTextNode(f.LoanContactName);
+      }
+      else{
+            var cellText = document.createTextNode("Null");
+      }
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+    
+
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+    
+
+  // put the <tbody> in the <table>
+  tbl.appendChild(tblBody);
+  // appends <table> into <body>
+
+
+  divresults.appendChild(tbl);
+  //document.write(body.appendChild(tbl););
+  
+  //body.appendChild(div);
+  // sets the border attribute of tbl to 2;
+  tbl.setAttribute("border", "2");
+  
+
+}
+</script>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 30%;
+    font-size: 13px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+body {
+min-height: 100%;
+width: 100%;
+}
+.button {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 9px;
+    border-radius: 8px;
+    width: 220px;
+}
+.button:hover {
+    background-color: white;
+    color: #555555;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+div.rep{
+    position: absolute;
+    top: 250px;
+    right: -140px;
+    overflow:auto;
+    height:300px;
+    
+}
+
+table.tableX{
+    font-family: arial, sans-serif;
+    width: 100%;
+    font-size: 12px;
+    padding:20px; 
+
+}
+
+</style>
+
+
+<body>
+<div style="padding:40px;margin:40px;border:1px solid #ccc;" >
+    <h3>Upload a text file</h3>
+    <form id="form" action="#" method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
+        <tr><th><label for="id_doc"></label></th><td><ul class="errorlist"></ul><input type="file" name="doc" required id="id_doc" onchange="form.submit()"></td></tr>
+        
+    </form>
+ 
+<div id="invi" >
+ <table >
+ <col width="200">
+ <col width="100">
+  <tr>
+    <td>Firstname</td>
+    <td>{{StudentFirstName}}</td> 
+  </tr>
+  <tr>
+    <td>Middle Name</td>
+    <td>{{StudentMiddleInitial}}</td>
+  </tr>
+  <tr>
+    <td>Last Name</td>
+    <td>{{StudentLastName}}</td>
+  </tr>
+   <tr>
+    <td>Street Address</td>
+    <td>{{StudentStreetAddress}}</td>
+  </tr>
+ </br>
+ <tr>
+    <td>City</td>
+    <td>{{StudentCity}}</td>
+  </tr>
+ </br>
+ <tr>
+    <td>State Code</td>
+    <td>{{StudentStateCode}}</td>
+  </tr>
+ <tr>
+    <td>Zip Code</td>
+    <td> {{StudentZipCode}}</td>
+  </tr>
+   <tr>
+    <td>Home Phone Country Code</td>
+    <td>{{StudentHomePhoneCountryCode}}</td>
+  </tr>
+  <tr>
+    <td>Work Phone Country Code</td>
+    <td>{{StudentWorkPhoneCountryCode}}</td>
+  </tr>
+  <tr>
+    <td>Cell Phone Country Code</td>
+    <td>{{StudentCellPhoneCountryCode}}</td>
+  </tr>
+   <tr>
+    <td>Phone Number</td>
+    <td>{{StudentHomePhoneNumber}}</td>
+  </tr>
+  <tr>
+    <td>Work Number</td>
+    <td>{{StudentWorkPhoneNumber}}</td>
+  </tr>
+  <tr>
+    <td>Cell Phone Number</td>
+    <td>{{StudentCellPhoneNumber}}</td>
+  </tr>
+</table>
+</br>
+<div class="rep">
+<table>
+<tr>
+<th>Type of Loans</th>
+<th> Loan Date</th>
+<th> Loan Canceled Amount</th>
+<th> Outstanding Principal Balance</th>
+<th> Outstanding Interest Balance</th>
+</tr>
+<div class="repbody">
+{% for f in final %}
+ 
+ <tr>
+    <td><button type="button" class="button" onclick="func({{f}})" >{{f.LoanType}}</button></td>
+    <td>{{f.LoanDate}}</td>
+    <td>{{f.LoanCanceledAmount}}</td>
+    <td>{{f.LoanOutstandingPrincipalBalance}}</td>
+    <td>{{f.LoanOutstandingInterestBalance}}</td>
+ </tr>    
+{% endfor %}
+</div>
+</table>
+</div>
+</br>
+</br>
+<div id="xtable">
+
+</div>
+
+
+ 
+</div>
+</div>
+</body>
+</html>
